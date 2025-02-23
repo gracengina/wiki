@@ -1,0 +1,17 @@
+{%extends "encyclopedia/layout.html"%}
+
+{%block title%}
+Create
+{%endblock%}
+
+{%block body%}
+<div>
+    <form method="post" action="{%url 'create' %}">
+        {%csrf_token%}
+        <input type="text" name="title" placeholder="title">
+        <textarea name="content"></textarea>
+        <input type="submit" name="submit">
+        <a href="{%url 'index'%}">cancel</a>
+    </form>
+</div>
+{%endblock%}

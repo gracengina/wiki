@@ -1,0 +1,18 @@
+{%extends "encyclopedia/layout.html"%}
+{%block title%}
+{{title}}
+{%endblock%}
+
+{%block body%}
+
+    <form method="post" action="{%url 'edit' title%}">
+        {%csrf_token%}
+        <div class="form">
+            <textarea id="content" name="content" class="form" rows="10" required>{{ content|escape }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">save changes</button>
+        <a href="{% url 'title' title%}" class="btn btn-secondary">Cancel</a>
+    </form>
+
+{%endblock%}
+

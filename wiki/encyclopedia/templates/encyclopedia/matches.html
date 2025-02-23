@@ -1,0 +1,21 @@
+{%extends "encyclopedia/layout.html"%}
+
+{%block title%}
+mechi
+{%endblock%}
+
+{%block body%}
+
+{%if matches %}
+    <h5>Matches to your search {{query}}</h5>
+        {%for entry in matches%}
+        <ul>
+            <li><a href="{%url 'title' entry.title%}">{{entry.title}}</a></li>
+        </ul>
+        {%endfor%}
+
+{%else%}
+    <h1>No matches to {{query}}</h1>
+{%endif%}
+
+{%endblock%}
